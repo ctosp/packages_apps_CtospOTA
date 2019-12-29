@@ -30,7 +30,7 @@ public class UpdateBase implements UpdateBaseInfo {
     private String mNewsUrl;
     private String mMaintainer;
     private String mMaintainerUrl;
-    private String mHash;
+    private String mDeveloperUrl;
 
     UpdateBase() {
     }
@@ -153,11 +153,11 @@ public class UpdateBase implements UpdateBaseInfo {
     }
 
     @Override
-    public String getHash() {
-        return mHash;
+    public String getDeveloperUrl() {
+        return mDeveloperUrl;
     }
 
-    public void setHash(String hash) {
-        mHash = hash;
+    public void setDeveloperUrl(String developerUrl) {
+        mDeveloperUrl = developerUrl;
     }
 }
