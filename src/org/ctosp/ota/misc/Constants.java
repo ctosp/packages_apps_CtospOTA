@@ -37,10 +37,10 @@ public final class Constants {
     static final int AUTO_UPDATES_CHECK_INTERVAL_MONTHLY = 3;
     static final String PROP_AB_DEVICE = "ro.build.ab_update";
     static final String PROP_DEVICE = "org.ctosp.device";
-    static final String PROP_BUILD_VERSION = "org.ctosp.version";
+    static final String PROP_BUILD_VERSION = "org.ctosp.version.prop";
     static final String PROP_VERSION_CODE = "org.ctosp.ota.version_code";
-    static final String OTA_URL = "https://download.ctosp.org/ota_v3/%s/%s";
-    static final String DOWNLOAD_WEBPAGE_URL = "https://download.ctosp.org/changelog/%s/%s";
+    static final String OTA_URL = "https://raw.githubusercontent.com/ctosp-Devices/official_devices/master/builds/%s.json";
+    static final String DOWNLOAD_WEBPAGE_URL = "https://raw.githubusercontent.com/ctosp-Devices/official_devices/master/changelogs/%s/%s.txt";
     public static final String DOWNLOAD_PATH = "/data/system_updates/";
     static final String EXPORT_PATH = "ctosp-Updates/";
 }
