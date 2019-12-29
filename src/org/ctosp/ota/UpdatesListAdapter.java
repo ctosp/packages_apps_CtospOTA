@@ -36,6 +36,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ProgressBar;
+import android.text.format.Formatter;
 import android.widget.TextView;
 
 import org.ctosp.ota.controller.UpdaterController;
@@ -104,15 +105,16 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
             String total = Utils.readableFileSize(update.getFileSize());
             String percentage = NumberFormat.getPercentInstance().format(
                     update.getProgress() / 100.f);
+            String speed = Formatter.formatFileSize(mActivity, update.getSpeed());
             long eta = update.getEta();
             if (eta > 0) {
                 CharSequence etaString = StringGenerator.formatETA(mActivity, eta * 1000);
                 viewHolder.mProgressText.setText(mActivity.getString(
                         R.string.list_download_progress_eta_new, downloaded, total, etaString,
-                        percentage));
+                        percentage) + " • " + speed + "/s");
             } else {
                 viewHolder.mProgressText.setText(mActivity.getString(
-                        R.string.list_download_progress_new, downloaded, total, percentage));
+                        R.string.list_download_progress_new, downloaded, total, percentage) + " • " + speed + "/s");
             }
             setButtonAction(viewHolder.mAction, Action.PAUSE, downloadId, true);
             viewHolder.mDetails.setVisibility(View.GONE);
